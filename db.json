@@ -1,3 +1,51 @@
 {
-    // soon to be populated with posts of animals
+    "posts": [
+        {
+            "id": 1,
+            "caption": "first animal post",
+            "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
+            "likes": 0,
+            "favorited": false,
+            "type": "dog",
+            "comments": []
+        },
+        {
+            "id": 2,
+            "caption": "first animal post",
+            "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
+            "likes": 0,
+            "favorited": false,
+            "type": "dog",
+            "comments": []
+        },
+        {
+            "id": 3,
+            "caption": "first animal post",
+            "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
+            "likes": 0,
+            "favorited": false,
+            "type": "dog",
+            "comments": []
+        },
+        {
+            "id": 4,
+            "caption": "first animal post",
+            "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
+            "likes": 0,
+            "favorited": false,
+            "type": "dog",
+            "comments": []
+        },
+        {
+            "id": 5,
+            "caption": "first animal post",
+            "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
+            "likes": 0,
+            "favorited": false,
+            "type": "dog",
+            "comments": []
+        }
+        
+    ]
 }
+
