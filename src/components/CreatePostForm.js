@@ -20,7 +20,7 @@ class CreatePostForm extends React.Component{
         return(
             <div>
                <form onSubmit={()=> this.props.addPost(this.state)}>
-                   <input type="text" placeholder="Animal Name" name="caption" 
+                   <input type="text" placeholder="Caption goes here" name="caption" 
                    value={this.state.caption}
                    onChange={(e)=>this.handleSubmit(e)}
                    ></input>

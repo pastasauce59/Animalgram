@@ -4,16 +4,16 @@ export default class Post extends React.Component{
 
 
     state = {
-        comments :[],
+        comments :"",
         favorited: false
     }
 
-    handleComment = (e) => {
-        e.preventDefault()
-        this.setState({
-            comments: e.target.value
-        })
-    }
+    // handleComment = (e) => {
+    //     e.preventDefault()
+        
+    //     this.state.comments
+    
+    // }
 
     favoritePet = () => {
         this.setState({
@@ -21,23 +21,23 @@ export default class Post extends React.Component{
         })
       }
 
-componentDidMount(){
-    fetch("http://localhost:3000/posts/", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify,
-})
-  .then((resp) => resp.json())
-  .then((postObj) => {
-      this.setState({
-          conments: [...this.state.comments, postObj],
-          favorited: !this.state.favorited
-      })
-  });
+// componentDidMount(){
+//     fetch("http://localhost:3000/posts/", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify,
+// })
+//   .then((resp) => resp.json())
+//   .then((postObj) => {
+//       this.setState({
+//           conments: [...this.state.comments, postObj],
+//           favorited: !this.state.favorited
+//       })
+//   });
 
-}    
+// }    
 
 
 
@@ -59,8 +59,11 @@ componentDidMount(){
             
 
                
-               <form onSubmit={()=>this.props.addComment(this.state.comments)} className="comment-form">
-                <input onChange={(e)=> this.handleComment(e)} value={this.state.comments} type="text" className="comment-input" placeholder="leave a comment"></input>
+               <form onSubmit={() => this.props.addComment(this.state.comments, this.props.post)} className="comment-form">
+                
+                {/* <input onChange={(e)=> this.handleComment(e)} value={this.state.comments} type="text" className="comment-input" placeholder="leave a comment"></input> */}
+                <input onChange={(e)=> this.setState({comments: e.target.value})} type="text" name='comment' className="comment-input" placeholder="leave a comment"></input>
+                
                 <button type="submit" className="submit-comment" >submit</button>
                 </form>
 

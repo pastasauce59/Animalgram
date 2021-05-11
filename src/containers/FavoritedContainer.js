@@ -7,7 +7,7 @@ export default class FavoritedContainer extends React.Component{
         return(
             <div>
                 <h1>Favorite Container</h1>
-                {this.props.favoritedPosts.map(favoritePostObj => <Post post={favoritePostObj} />)}
+                {this.props.favoritedPosts.map(favoritePostObj => <Post key={favoritePostObj.id} post={favoritePostObj} addComment={this.props.addComment} />)}
             </div>
         )
     }
