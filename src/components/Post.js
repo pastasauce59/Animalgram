@@ -21,23 +21,23 @@ export default class Post extends React.Component{
         })
       }
 
-componentDidMount(){
-    fetch("http://localhost:3000/posts/", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify,
-})
-  .then((resp) => resp.json())
-  .then((postObj) => {
-      this.setState({
-          conments: [...this.state.comments, postObj],
-          favorited: !this.state.favorited
-      })
-  });
+// componentDidMount(){
+//     fetch("http://localhost:3000/posts/", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify(),
+// })
+//   .then((resp) => resp.json())
+//   .then((postObj) => {
+//       this.setState({
+//           conments: [...this.state.comments, postObj],
+//           favorited: !this.state.favorited
+//       })
+//   });
 
-}    
+// }    
 
 
 

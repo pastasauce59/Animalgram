@@ -19,11 +19,11 @@ class App extends React.Component {
 
 
   
-  componentDidMount() {
-    fetch('http://localhost:3000/posts')
-    .then(resp => resp.json())
-    .then(postData => this.setState({posts: postData}))
-  }
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/posts')
+  //   .then(resp => resp.json())
+  //   .then(postData => this.setState({posts: postData}))
+  // }
 
   addComment = (commentData) => {
     
