@@ -13,28 +13,69 @@ class App extends React.Component {
   state = {
     posts: [],
     comments: [],
-    favorited: false
+    // favorited: false
   }
 
 
 
-  
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/posts')
-  //   .then(resp => resp.json())
-  //   .then(postData => this.setState({posts: postData}))
-  // }
+  // sorted the data so newest posts at the top of feed
+  componentDidMount() {
+    fetch('http://localhost:3000/posts')
+    .then(resp => resp.json())
+    .then(postData => this.setState({posts: postData.sort((a,b) => b.id - a.id)}))
+  }
 
-  addComment = (commentData) => {
-    
-    this.setState({
-      comments: [...this.state.comments, commentData]
+  addComment = (e, comment, postObj) => {
+    e.preventDefault()
+    // console.log(postObj)
+
+    let reqObj = {}
+    reqObj.headers = {'Content-Type': 'Application/json'}
+    reqObj.method = 'PATCH'
+    reqObj.body = JSON.stringify({
+      comments: [...postObj.comments, comment]
     })
+
+    fetch(`http://localhost:3000/posts/${postObj.id}`, reqObj)
+    .then(resp => resp.json())
+    .then(updatedPostObj => this.setState({
+      posts: this.state.posts.map(post => {
+        if(post.id === updatedPostObj.id) return updatedPostObj
+        else return post
+      })
+    }))
+    
   
-}
+  }
+  favoritePet = (favoriteData, postObj) => {
+    
+    console.log(favoriteData, postObj)  
+    
+    // e.preventDefault()
+      //   this.setState({
+      //     favorited: !this.state.favorited
+      //   })
+        let reqObj = {}
+        reqObj.headers = {'Content-Type': 'Application/json'}
+        reqObj.method = 'PATCH'
+        reqObj.body = JSON.stringify({
+          favorited: favoriteData
+        })
+    
+        fetch(`http://localhost:3000/posts/${postObj.id}`, reqObj)
+        .then(resp => resp.json())
+        .then(updatedPostObj => this.setState({
+          posts: this.state.posts.map(post => {
+            if(post.id === updatedPostObj.id) return updatedPostObj
+            else return post
+          })
+        }))
+      }
+      
+
 
   addPost = (postObj) => {
-    debugger
+    // debugger
     let newPost = {
       caption: postObj.caption,
       image: postObj.image,
@@ -43,9 +84,19 @@ class App extends React.Component {
       type: postObj.type,
       comments: []
     }
-    this.setState({
-      posts: [...this.state.posts, newPost]
-    })
+    
+
+  let reqObj = {}
+  reqObj.headers = {'Content-Type': 'Application/json'}
+  reqObj.method = 'POST'
+  reqObj.body = JSON.stringify(newPost)
+ 
+    
+  fetch('http://localhost:3000/posts', reqObj)
+  .then(resp => resp.json())
+  .then(newPostObj => {
+    this.setState({posts: [newPostObj, ...this.state.posts]})
+  })
 
 
 
@@ -53,22 +104,22 @@ class App extends React.Component {
 
 
  render() {
-  //  console.log(this.state.posts)
+   console.log(this.state.posts)
   
   let catPosts = this.state.posts.filter(post => post.type === "cat")
   // console.log(catPosts)
 
   let favoritedPosts = this.state.posts.filter(post => post.favorited === true)
-  console.log(favoritedPosts)
+  // console.log(favoritedPosts)
 
   return (
     <Router>
     <div>
       <Navbar  />
       <br/>
-      <Route exact path="/" component={ () => <FeedContainer  favoritePet={this.favoritePet}  addPost={this.addPost}  addComment={this.addComment} posts={this.state.posts} />} />
-      <Route exact path="/filtered" component={ () => <FilteredContainer catPosts={catPosts} /> } />
-      <Route exact path="/favorites" component={ () => <FavoritedContainer favoritedPosts={favoritedPosts} />} />
+      <Route exact path="/" component={ () => <FeedContainer  favoritePet={this.favoritePet}  favoritePet={this.favoritePet}  addPost={this.addPost}  addComment={this.addComment} posts={this.state.posts} />} />
+      <Route exact path="/filtered" component={ () => <FilteredContainer  favoritePet={this.favoritePet}  catPosts={catPosts} addComment={this.addComment} /> } />
+      <Route exact path="/favorites" component={ () => <FavoritedContainer favoritedPosts={favoritedPosts} addComment={this.addComment}/>} />
     </div>
   </Router>
   )

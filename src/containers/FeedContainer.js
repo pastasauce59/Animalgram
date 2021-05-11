@@ -10,7 +10,7 @@ class FeedContainer extends React.Component{
             <div>
                 <CreatePostForm addPost={this.props.addPost} />
                 <h1>Feed Container</h1>
-                {this.props.posts.map(postObj => <Post key={postObj.id} post={postObj} addComment={this.props.addComment} />)}
+                {this.props.posts.map(postObj => <Post favoritePet={this.props.favoritePet} key={postObj.id} post={postObj} addComment={this.props.addComment} />)}
             </div>
         )
     }

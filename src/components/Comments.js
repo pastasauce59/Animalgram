@@ -1,4 +1,4 @@
-
+import React from 'react'
 
 
 
@@ -6,7 +6,7 @@
 const Comments = (props) => {
   return(
     <ul>
-    {props.post.comments.map(comment=> <li> {comment}</li>)}
+    {props.post.comments.map((comment, index)=> <li key={index}> {comment}</li>)}
 
 
     </ul>
@@ -14,20 +14,6 @@ const Comments = (props) => {
 
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // import React from 'react'
