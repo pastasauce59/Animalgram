@@ -7,7 +7,10 @@
             "likes": 0,
             "favorited": false,
             "type": "dog",
-            "comments": []
+            "comments": [
+                "comment 1",
+                "comment 2"
+            ]
         },
         {
             "id": 2,
@@ -42,6 +45,24 @@
             "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
             "likes": 0,
             "favorited": false,
+            "type": "dog",
+            "comments": []
+        },
+        {
+            "id": 6,
+            "caption": "example cat post",
+            "image": "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9",
+            "likes": 0,
+            "favorited": false,
+            "type": "cat",
+            "comments": []
+        },
+        {
+            "id": 7,
+            "caption": "doggo with glasses",
+            "image": "https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_581/master/969.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a368f449b1cc1f37412c07a1bd901fb5",
+            "likes": 0,
+            "favorited": true,
             "type": "dog",
             "comments": []
         }
