@@ -5,9 +5,9 @@ import React from 'react'
 
 const Comments = (props) => {
   return(
-    <ul>
-    {props.post.comments.map((comment, index)=> <li key={index}> {comment}</li>)}
-
+    <ul className='comments'><strong>Comments:</strong>
+    {props.post.comments.map((comment, index)=> <li key={index}> {comment} <p></p> </li>)}
+    
 
     </ul>
   )

@@ -21,41 +21,26 @@ export default class Post extends React.Component{
         })
       }
 
-// componentDidMount(){
-//     fetch("http://localhost:3000/posts/", {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify,
-// })
-//   .then((resp) => resp.json())
-//   .then((postObj) => {
-//       this.setState({
-//           conments: [...this.state.comments, postObj],
-//           favorited: !this.state.favorited
-//       })
-//   });
-
-// }    
+    
 
 
 
     render() {
         // console.log(this.props.post)
        return(
-           <div>
+           <div className='animal-post'>
                
-               <h3>{this.props.post.caption}</h3>
+               <h3 className='caption'>{this.props.post.caption}</h3>
                <img src={this.props.post.image}></img>
                               
                  
                  <Comments post={this.props.post}/>
                      
                
-               <h3>👍🏼: {this.props.post.likes}</h3>
-               <button>Ace Ventura Approved 👍🏼</button>
+               <h3 className='likes'>👍🏼: {this.props.post.likes}</h3>
+               <button onClick={() => this.props.likePost(this.props.post)} >Ace Ventura Approved 👍🏼</button>
                <button  onClick={()=>this.favoritePet()}  > Favorite 💛</button>
+               <button onClick={() => this.props.deletePost(this.props.post)} >Unsatisfied? ❌</button>
             
 
                

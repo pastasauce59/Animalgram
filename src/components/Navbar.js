@@ -5,9 +5,10 @@ const link = {
     width: '100px',
     padding: '12px',
     margin: '0 6px 6px',
-    background: 'blue',
+    background: 'lightcoral',
     textDecoration: 'none',
     color: 'white',
+    borderRadius: '12px'
   }
 
 
@@ -21,7 +22,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: 'darkblue'
+            background: 'coral'
           }}
         >Home</NavLink>
         
@@ -30,7 +31,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: 'darkblue'
+            background: 'coral'
           }}
         >Cats</NavLink>
         
@@ -39,7 +40,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: 'darkblue'
+            background: 'coral'
           }}
         >Favorites</NavLink>
       </div>
