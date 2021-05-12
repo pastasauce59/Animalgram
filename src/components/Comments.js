@@ -6,9 +6,7 @@ import React from 'react'
 const Comments = (props) => {
   return(
     <ul>
-    {props.post.comments.map((comment, index)=> <li key={index}> {comment}</li>)}
-
-
+    {props.post.comments.map((comment, key)=> <li key={comment.id}> {comment} <button onClick={(e)=>props.deleteComment(e, props.post, key)}>Delete</button></li>)}
     </ul>
   )
 

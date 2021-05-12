@@ -45,7 +45,9 @@
       "likes": 0,
       "favorited": false,
       "type": "dog",
-      "comments": []
+      "comments": [
+        "hello"
+      ]
     },
     {
       "id": 6,
@@ -54,7 +56,9 @@
       "likes": 0,
       "favorited": false,
       "type": "cat",
-      "comments": []
+      "comments": [
+        "and another"
+      ]
     },
     {
       "id": 7,
@@ -74,7 +78,7 @@
       "favorited": false,
       "type": "cat",
       "comments": [
-        "Loving learning how to code!"
+        "here's another comment"
       ],
       "id": 8
     },
@@ -85,18 +89,7 @@
       "favorited": true,
       "type": "cat",
       "comments": [
-        "this will replace the other comment",
-        "does this work?",
-        "still working?",
-        "working in regular feed",
-        "regular feed",
-        "cat feed",
-        "hi",
-        "hi",
-        "hi",
-        "",
-        "hey",
-        "hero shaggy"
+        "three"
       ],
       "id": 9
     }
