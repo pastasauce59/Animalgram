@@ -8,19 +8,22 @@
       "favorited": false,
       "type": "cat",
       "comments": [
-        "cat says hi!"
+        "cat says hi!",
+        "hey kitty kitty!"
       ]
     },
     {
       "id": 7,
       "caption": "doggo with glasses",
       "image": "https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_581/master/969.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a368f449b1cc1f37412c07a1bd901fb5",
-      "likes": 3,
+      "likes": 4,
       "favorited": true,
       "type": "dog",
       "comments": [
         "fav feed comment",
-        "checking if working?"
+        "checking if working?",
+        "still working?",
+        "making a comment while in favorite feed"
       ]
     },
     {
@@ -37,7 +40,7 @@
     {
       "caption": "example post",
       "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
-      "likes": 3,
+      "likes": 4,
       "favorited": false,
       "type": "cat",
       "comments": [
@@ -52,9 +55,23 @@
         "comments are spilling out",
         "still",
         "how about now",
-        "got em"
+        "got em",
+        "testing",
+        "comments are working!",
+        "do they work here?"
       ],
       "id": 9
+    },
+    {
+      "caption": "testing",
+      "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
+      "likes": 1,
+      "favorited": true,
+      "type": "toy",
+      "comments": [
+        "that isn't an animal!"
+      ],
+      "id": 10
     }
   ]
 }

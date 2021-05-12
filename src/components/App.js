@@ -13,7 +13,7 @@ class App extends React.Component {
   state = {
     posts: [],
     comments: [],
-    favorited: false
+    // favorited: false
   }
 
 
@@ -25,9 +25,9 @@ class App extends React.Component {
     .then(postData => this.setState({posts: postData.sort((a,b) => b.id - a.id)}))
   }
 
-  addComment = (comment, postObj) => {
-    
-    console.log(postObj)
+  addComment = (e, comment, postObj) => {
+    e.preventDefault()
+    // console.log(postObj)
 
     let reqObj = {}
     reqObj.headers = {'Content-Type': 'Application/json'}
@@ -47,6 +47,32 @@ class App extends React.Component {
     
   
   }
+  favoritePet = (favoriteData, postObj) => {
+    
+    console.log(favoriteData, postObj)  
+    
+    // e.preventDefault()
+      //   this.setState({
+      //     favorited: !this.state.favorited
+      //   })
+        let reqObj = {}
+        reqObj.headers = {'Content-Type': 'Application/json'}
+        reqObj.method = 'PATCH'
+        reqObj.body = JSON.stringify({
+          favorited: favoriteData
+        })
+    
+        fetch(`http://localhost:3000/posts/${postObj.id}`, reqObj)
+        .then(resp => resp.json())
+        .then(updatedPostObj => this.setState({
+          posts: this.state.posts.map(post => {
+            if(post.id === updatedPostObj.id) return updatedPostObj
+            else return post
+          })
+        }))
+      }
+      
+
 
   addPost = (postObj) => {
     // debugger
@@ -58,9 +84,7 @@ class App extends React.Component {
       type: postObj.type,
       comments: []
     }
-    // this.setState({
-    //   posts: [newPost, ...this.state.posts]
-    // })
+    
 
   let reqObj = {}
   reqObj.headers = {'Content-Type': 'Application/json'}
@@ -125,10 +149,10 @@ class App extends React.Component {
         addComment={this.addComment} posts={this.state.posts} likePost={this.likePost} deletePost={this.deletePost} />} />
       
       <Route exact path="/filtered" component={ () => <FilteredContainer catPosts={catPosts}
-       addComment={this.addComment} likePost={this.likePost} /> } />
+       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} /> } />
       
       <Route exact path="/favorites" component={ () => <FavoritedContainer favoritedPosts={favoritedPosts}
-       addComment={this.addComment} likePost={this.likePost} />} />
+       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} />} />
     </div>
   </Router>
   )

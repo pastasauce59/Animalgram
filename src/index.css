@@ -5,12 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(152, 206, 224);
+  background-color: lightcoral;
   background-image: url("https://newsfeed.org/wp-content/uploads/camera-classic-instagram-1338789.jpg");
   /* background-image: url('https://i.pinimg.com/originals/14/f5/d2/14f5d2f8fe3f35a78514871ef356bc53.jpg'); */
   background-attachment:fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  border-style:groove;
+  border-color: lightcoral;
+  border-width: 10px;
   
 }
 

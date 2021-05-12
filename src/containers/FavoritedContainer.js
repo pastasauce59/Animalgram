@@ -8,7 +8,7 @@ export default class FavoritedContainer extends React.Component{
             <div>
                 <h1>~ All your favorites right where you want them ~</h1>
                 {this.props.favoritedPosts.map(favoritePostObj => <Post key={favoritePostObj.id}
-                 post={favoritePostObj} addComment={this.props.addComment} likePost={this.props.likePost} />)}
+                 post={favoritePostObj} addComment={this.props.addComment} likePost={this.props.likePost} favoritePet={this.props.favoritePet} />)}
             </div>
         )
     }
