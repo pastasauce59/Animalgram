@@ -19,20 +19,21 @@ class CreatePostForm extends React.Component{
         // console.log(this.props.posts)
         return(
             <div>
+                <h3>Share your favorite animal photos 📸</h3>
                <form onSubmit={()=> this.props.addPost(this.state)}>
-                   <input type="text" placeholder="Caption goes here" name="caption" 
+                   <input type="text" placeholder="Caption Your Post" name="caption" 
                    value={this.state.caption}
                    onChange={(e)=>this.handleSubmit(e)}
                    ></input>
-                   <input type="text" placeholder="Animal Image" name="image"
+                   <input type="text" placeholder="Animal Image URL Here" name="image"
                    value={this.state.image}
                    onChange={(e)=>this.handleSubmit(e)}
                    ></input>
-                   <input type="text" placeholder="Animal Type" name="type" 
+                   <input type="text" placeholder="What Animal Type Is It?" name="type" 
                    value={this.state.type}
                    onChange={(e)=>this.handleSubmit(e)}
                    ></input>
-                   <button type="submit" className="submit-comment" >submit</button>
+                   <button type="submit" className="submit-comment" >Submit</button>
                </form>
             </div>
         )

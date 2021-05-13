@@ -1,55 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "caption": "first animal post",
-      "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
-      "likes": 0,
-      "favorited": false,
-      "type": "dog",
-      "comments": [
-        "checking"
-      ]
-    },
-    {
-      "id": 2,
-      "caption": "first animal post",
-      "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
-      "likes": 0,
-      "favorited": false,
-      "type": "dog",
-      "comments": []
-    },
-    {
-      "id": 3,
-      "caption": "first animal post",
-      "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
-      "likes": 0,
-      "favorited": false,
-      "type": "dog",
-      "comments": []
-    },
-    {
-      "id": 4,
-      "caption": "first animal post",
-      "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
-      "likes": 0,
-      "favorited": false,
-      "type": "dog",
-      "comments": []
-    },
-    {
-      "id": 5,
-      "caption": "first animal post",
-      "image": "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg",
-      "likes": 0,
-      "favorited": false,
-      "type": "dog",
-      "comments": [
-        "hello"
-      ]
-    },
-    {
       "id": 6,
       "caption": "example cat post",
       "image": "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9",
@@ -57,18 +8,22 @@
       "favorited": false,
       "type": "cat",
       "comments": [
-        "and another"
+        "cat says hi!",
+        "hey kitty kitty!"
       ]
     },
     {
       "id": 7,
       "caption": "doggo with glasses",
       "image": "https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_581/master/969.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a368f449b1cc1f37412c07a1bd901fb5",
-      "likes": 0,
+      "likes": 4,
       "favorited": true,
       "type": "dog",
       "comments": [
-        "fav feed comment"
+        "fav feed comment",
+        "checking if working?",
+        "still working?",
+        "making a comment while in favorite feed"
       ]
     },
     {
@@ -85,11 +40,14 @@
     {
       "caption": "example post",
       "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
-      "likes": 0,
-      "favorited": true,
+      "likes": 5,
+      "favorited": false,
       "type": "cat",
       "comments": [
-        "three"
+        "this will replace the other comment",
+        "does this work?",
+        "still working?",
+        "working in regular feed"
       ],
       "id": 9
     }

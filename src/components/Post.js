@@ -14,18 +14,20 @@ export default class Post extends React.Component{
     render() {
         // console.log(this.props.post)
        return(
-           <div>
+           <div className='animal-post'>
                
-               <h3>{this.props.post.caption}</h3>
-               <img alt="" src={this.props.post.image}></img>
+               <h3 className='caption'>{this.props.post.caption}</h3>
+               <img src={this.props.post.image}></img>
                               
                  
-                 <Comments  deleteComment={this.props.deleteComment}  post={this.props.post}/>
+                 <Comments post={this.props.post} deleteComment={this.props.deleteComment}/>
                      
                
-               <h3>👍🏼: {this.props.post.likes}</h3>
-               <button>Ace Ventura Approved 👍🏼</button>
-               <button onClick={()=>this.props.favoritePet(!this.props.post.favorited, this.props.post)}  > Favorite 💛</button>
+               <h3 className='likes'>👍🏼: {this.props.post.likes}</h3>
+               <button onClick={() => this.props.likePost(this.props.post)} >Ace Ventura Approved 👍🏼</button>
+               <button  onClick={()=>this.props.favoritePet(!this.props.post.favorited, this.props.post,
+                 this.props.post.favorited === false ? alert("Favorited!") : alert("Unfavorited :(") )}  > Favorite 💛</button>
+               <button onClick={() => this.props.deletePost(this.props.post)} >Unsatisfied? ❌</button>
             
 
                {/* COMMENT FORM */}
