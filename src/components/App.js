@@ -81,7 +81,7 @@ class App extends React.Component {
       image: postObj.image,
       likes: 0,
       favorited: false,
-      type: postObj.type,
+      type: postObj.type.toLowerCase(),
       comments: []
     }
     
