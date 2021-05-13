@@ -89,7 +89,8 @@
       "favorited": true,
       "type": "cat",
       "comments": [
-        "three"
+        "three",
+        "here's another one"
       ],
       "id": 9
     }

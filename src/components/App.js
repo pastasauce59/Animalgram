@@ -33,7 +33,7 @@ class App extends React.Component {
         comments: post.comments
     })
     
-    fetch(`http://localhost:3000/posts/${post.id}?embed=comments/`, reqObj)
+    fetch(`http://localhost:3000/posts/${post.id}/`, reqObj)
     .then((r) => r.json())
     .then((updatedCommentObj) => 
       this.setState({
