@@ -149,10 +149,10 @@ class App extends React.Component {
         addComment={this.addComment} posts={this.state.posts} likePost={this.likePost} deletePost={this.deletePost} />} />
       
       <Route exact path="/filtered" component={ () => <FilteredContainer catPosts={catPosts}
-       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} /> } />
+       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} deletePost={this.deletePost} /> } />
       
       <Route exact path="/favorites" component={ () => <FavoritedContainer favoritedPosts={favoritedPosts}
-       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} />} />
+       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} deletePost={this.deletePost} />} />
     </div>
   </Router>
   )

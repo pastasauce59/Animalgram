@@ -61,17 +61,6 @@
         "do they work here?"
       ],
       "id": 9
-    },
-    {
-      "caption": "testing",
-      "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
-      "likes": 1,
-      "favorited": true,
-      "type": "toy",
-      "comments": [
-        "that isn't an animal!"
-      ],
-      "id": 10
     }
   ]
 }
