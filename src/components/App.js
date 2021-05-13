@@ -129,6 +129,29 @@ class App extends React.Component {
     .then(() => this.setState({posts: newPosts}))
   }
 
+  deleteComment = (e, post, key) => {
+    e.preventDefault()
+    // debugger
+      // this.setState({
+      //   comments: [post.comments.splice(key, 1)]
+      //   })
+      // console.log(post.comments)
+      post.comments.splice(key, 1)
+      let reqObj = {}
+      reqObj.headers = {'Content-Type': 'Application/json'}
+      reqObj.method = 'PATCH'
+      reqObj.body = JSON.stringify({
+        comments: post.comments
+    })
+    fetch(`http://localhost:3000/posts/${post.id}`, reqObj)
+    .then((r) => r.json())
+    .then((updatedCommentObj) =>
+      this.setState({
+      comments: this.state.comments.map(comment =>
+        comment.id )
+      })
+    )}
+
 
 
  render() {
@@ -146,13 +169,16 @@ class App extends React.Component {
       <Navbar  />
       <br/>
       <Route exact path="/" component={ () => <FeedContainer  favoritePet={this.favoritePet}  addPost={this.addPost}
-        addComment={this.addComment} posts={this.state.posts} likePost={this.likePost} deletePost={this.deletePost} />} />
+        addComment={this.addComment} posts={this.state.posts}
+         likePost={this.likePost} deletePost={this.deletePost} deleteComment={this.deleteComment} />} />
       
       <Route exact path="/filtered" component={ () => <FilteredContainer catPosts={catPosts}
-       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} deletePost={this.deletePost} /> } />
+       addComment={this.addComment} likePost={this.likePost}
+        favoritePet={this.favoritePet} deletePost={this.deletePost} deleteComment={this.deleteComment} /> } />
       
       <Route exact path="/favorites" component={ () => <FavoritedContainer favoritedPosts={favoritedPosts}
-       addComment={this.addComment} likePost={this.likePost} favoritePet={this.favoritePet} deletePost={this.deletePost} />} />
+       addComment={this.addComment} likePost={this.likePost}
+        favoritePet={this.favoritePet} deletePost={this.deletePost} deleteComment={this.deleteComment} />} />
     </div>
   </Router>
   )

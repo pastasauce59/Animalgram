@@ -40,25 +40,14 @@
     {
       "caption": "example post",
       "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
-      "likes": 4,
+      "likes": 5,
       "favorited": false,
       "type": "cat",
       "comments": [
         "this will replace the other comment",
         "does this work?",
         "still working?",
-        "working in regular feed",
-        "regular feed",
-        "cat feed",
-        "working?",
-        "awhhh yeah",
-        "comments are spilling out",
-        "still",
-        "how about now",
-        "got em",
-        "testing",
-        "comments are working!",
-        "do they work here?"
+        "working in regular feed"
       ],
       "id": 9
     }

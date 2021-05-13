@@ -20,7 +20,7 @@ export default class Post extends React.Component{
                <img src={this.props.post.image}></img>
                               
                  
-                 <Comments post={this.props.post}/>
+                 <Comments post={this.props.post} deleteComment={this.props.deleteComment}/>
                      
                
                <h3 className='likes'>👍🏼: {this.props.post.likes}</h3>

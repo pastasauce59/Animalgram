@@ -12,7 +12,8 @@ class FeedContainer extends React.Component{
                 <h1>~ Welcome to Animalgram! ~</h1>
                 {this.props.posts.map(postObj => <Post key={postObj.id} post={postObj}
                  addComment={this.props.addComment} likePost={this.props.likePost}
-                  deletePost={this.props.deletePost} favoritePet={this.props.favoritePet} />)}
+                  deletePost={this.props.deletePost} favoritePet={this.props.favoritePet}
+                  deleteComment={this.props.deleteComment} />)}
             </div>
         )
     }
