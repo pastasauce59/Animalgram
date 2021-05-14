@@ -4,51 +4,9 @@ import Post from '../components/Post'
 export default class FavoritedContainer extends React.Component{
 
     
+
+
     
-    
-    
-    
-    handleSubmit = (e, transactionData) => {
-        e.preventDefault()
-        
-        let favoritedPost = {
-          caption: postData.caption,
-          image: postData.image,
-          likes: postData.likes,
-          favorited: postData.favorited,
-          type: postData.type,
-          comments:[postData.comments],
-          id: postData.id
-        }
-        
-        fetch("http://localhost:6001/transactions/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newTransaction),
-        })
-          .then((r) => r.json())
-          .then((newTransactionObj) => 
-          this.setState({
-            transactions: [...this.state.transactions, newTransactionObj]
-          })
-          )
-      
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
     render() {
         return(
             <div>

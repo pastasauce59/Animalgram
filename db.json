@@ -5,7 +5,7 @@
       "caption": "example cat post",
       "image": "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9",
       "likes": 0,
-      "favorited": false,
+      "favorited": "5/14/2021, 9:06:06 AM",
       "type": "cat",
       "comments": [
         "cat says hi!",
@@ -17,7 +17,7 @@
       "caption": "doggo with glasses",
       "image": "https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_581/master/969.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a368f449b1cc1f37412c07a1bd901fb5",
       "likes": 4,
-      "favorited": true,
+      "favorited": null,
       "type": "dog",
       "comments": [
         "fav feed comment",
@@ -30,7 +30,7 @@
       "caption": "what's he looking at??",
       "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
       "likes": 0,
-      "favorited": false,
+      "favorited": null,
       "type": "cat",
       "comments": [
         "here's another comment"
@@ -40,8 +40,8 @@
     {
       "caption": "example post",
       "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
-      "likes": 5,
-      "favorited": false,
+      "likes": 6,
+      "favorited": "5/14/2021, 9:08:22 AM",
       "type": "cat",
       "comments": [
         "this will replace the other comment",
@@ -49,7 +49,8 @@
         "still working?",
         "working in regular feed"
       ],
-      "id": 9
+      "id": 9,
+      "favoritePet": null
     }
   ]
 }

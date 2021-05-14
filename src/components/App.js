@@ -13,9 +13,10 @@ class App extends React.Component {
   state = {
     posts: [],
     comments: [],
+   
   }
 
-
+  
 
   deleteComment = (e, post, key) => {
     e.preventDefault()
@@ -77,20 +78,32 @@ class App extends React.Component {
     })
   }
   )
-    
-  
   }
+
+
+  recordTime = () => {
+    this.setState({
+      timeClicked:new Date().toLocaleString()
+    })
+    
+    // console.log(new Date().toLocaleString())
+  }
+
+
   favoritePet = (favoriteData, postObj) => {
     
     // console.log(favoriteData, postObj)  
-    
-  
+
+        
         let reqObj = {}
-        reqObj.headers = {'Content-Type': 'Application/json'}
-        reqObj.method = 'PATCH'
-        reqObj.body = JSON.stringify({
-          favorited: favoriteData
-        })
+          reqObj.headers = {'Content-Type': 'Application/json'}
+          reqObj.method = 'PATCH'
+
+        postObj.favorited === null 
+        ? reqObj.body = JSON.stringify({
+          favorited: new Date().toLocaleString() }) 
+        : reqObj.body = JSON.stringify({
+          favorited: null }) 
     
         fetch(`http://localhost:3000/posts/${postObj.id}`, reqObj)
         .then(resp => resp.json())
@@ -189,8 +202,10 @@ class App extends React.Component {
   
   let catPosts = this.state.posts.filter(post => post.type === "cat")
   // console.log(catPosts)
-
-  let favoritedPosts = this.state.posts.filter(post => post.favorited === true)
+  
+  let filteredFavorites = this.state.posts.filter(post => post.favorited !== null)
+      
+  let favoritedPosts = filteredFavorites.sort((a,b) =>  new Date(b.favorited) - new Date(a.favorited))
   // console.log(favoritedPosts)
 
   return (
@@ -198,7 +213,7 @@ class App extends React.Component {
     <div>
       <Navbar  />
       <br/>
-      <Route exact path="/" component={ () => <FeedContainer  favoritePet={this.favoritePet}  addPost={this.addPost}
+      <Route exact path="/" component={ () => <FeedContainer  recordTime={this.recordTime}  favoritePet={this.favoritePet}  addPost={this.addPost}
         addComment={this.addComment} posts={this.state.posts}
          likePost={this.likePost} deletePost={this.deletePost} deleteComment={this.deleteComment} />} />
       
