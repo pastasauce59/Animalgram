@@ -43,6 +43,7 @@ class Navbar extends React.Component {
             background: 'coral'
           }}
         >Favorites</NavLink>
+        
       </div>
        
      )

@@ -6,6 +6,7 @@ import FeedContainer from "../containers/FeedContainer"
 import FilteredContainer from "../containers/FilteredContainer"
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
+import SearchBar from '../components/SearchBar'
 
 
 class App extends React.Component {
@@ -13,6 +14,8 @@ class App extends React.Component {
   state = {
     posts: [],
     comments: [],
+    searchText: "",
+    searchBar: true
     // favorited: false
   }
 
@@ -47,20 +50,31 @@ class App extends React.Component {
     
   
   }
+
+  // --- for reference --- //
+  // recordTime = () => {
+  //   this.setState({
+  //     timeClicked:new Date().toLocaleString()
+  //   })
+    
+  //   // console.log(new Date().toLocaleString())
+  // }
+
+
   favoritePet = (favoriteData, postObj) => {
     
-    console.log(favoriteData, postObj)  
-    
-    // e.preventDefault()
-      //   this.setState({
-      //     favorited: !this.state.favorited
-      //   })
+    // console.log(favoriteData, postObj)  
+
+        
         let reqObj = {}
-        reqObj.headers = {'Content-Type': 'Application/json'}
-        reqObj.method = 'PATCH'
-        reqObj.body = JSON.stringify({
-          favorited: favoriteData
-        })
+          reqObj.headers = {'Content-Type': 'Application/json'}
+          reqObj.method = 'PATCH'
+
+        postObj.favorited === null 
+        ? reqObj.body = JSON.stringify({
+          favorited: new Date().toLocaleString() }) 
+        : reqObj.body = JSON.stringify({
+          favorited: null }) 
     
         fetch(`http://localhost:3000/posts/${postObj.id}`, reqObj)
         .then(resp => resp.json())
@@ -80,7 +94,7 @@ class App extends React.Component {
       caption: postObj.caption,
       image: postObj.image,
       likes: 0,
-      favorited: false,
+      favorited: null,
       type: postObj.type.toLowerCase(),
       comments: []
     }
@@ -153,23 +167,48 @@ class App extends React.Component {
     )}
 
 
+searchPosts = (userInput) => {
+  this.setState({
+    searchText: userInput
+  })
+  // console.log(userInput)
+}
+
+handleSearchState = (boolean) => {
+  this.setState({searchBar: boolean})
+}
+
+
 
  render() {
-   console.log(this.state.posts)
+  //  console.log(this.state.posts)
   
   let catPosts = this.state.posts.filter(post => post.type === "cat")
   // console.log(catPosts)
 
-  let favoritedPosts = this.state.posts.filter(post => post.favorited === true)
+  // let favoritedPosts = this.state.posts.filter(post => post.favorited === true)
+  // // console.log(favoritedPosts)
+
+  let filteredFavorites = this.state.posts.filter(post => post.favorited !== null)
+      
+  let favoritedPosts = filteredFavorites.sort((a,b) =>  new Date(b.favorited) - new Date(a.favorited))
   // console.log(favoritedPosts)
+
+  let searchPostsArr = this.state.posts.filter(post => 
+    post.type.toLowerCase().includes(this.state.searchText.toLowerCase()))
+  
+    
 
   return (
     <Router>
     <div>
-      <Navbar  />
+      <Navbar />
+      {/* { this.handleSearchState(true) } */}
+      {/* { this.state.searchBar ? <SearchBar searchPosts={this.searchPosts} /> : null } */}
+      <SearchBar searchPosts={this.searchPosts} />
       <br/>
       <Route exact path="/" component={ () => <FeedContainer  favoritePet={this.favoritePet}  addPost={this.addPost}
-        addComment={this.addComment} posts={this.state.posts}
+        addComment={this.addComment} posts={searchPostsArr}
          likePost={this.likePost} deletePost={this.deletePost} deleteComment={this.deleteComment} />} />
       
       <Route exact path="/filtered" component={ () => <FilteredContainer catPosts={catPosts}
@@ -178,9 +217,11 @@ class App extends React.Component {
       
       <Route exact path="/favorites" component={ () => <FavoritedContainer favoritedPosts={favoritedPosts}
        addComment={this.addComment} likePost={this.likePost}
-        favoritePet={this.favoritePet} deletePost={this.deletePost} deleteComment={this.deleteComment} />} />
+        favoritePet={this.favoritePet} deletePost={this.deletePost} deleteComment={this.deleteComment}
+        handleSearchState={this.handleSearchState} searchState={this.state.searchBar} />} />
     </div>
   </Router>
+    
   )
  
     

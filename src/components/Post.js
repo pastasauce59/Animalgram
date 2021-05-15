@@ -25,8 +25,12 @@ export default class Post extends React.Component{
                
                <h3 className='likes'>👍🏼: {this.props.post.likes}</h3>
                <button onClick={() => this.props.likePost(this.props.post)} >Ace Ventura Approved 👍🏼</button>
+               
                <button  onClick={()=>this.props.favoritePet(!this.props.post.favorited, this.props.post,
-                 this.props.post.favorited === false ? alert("Favorited!") : alert("Unfavorited :(") )}  > Favorite 💛</button>
+                 this.props.post.favorited === null ? alert("Favorited!") : alert("Unfavorited :(") )}  >{
+                  this.props.post.favorited === null ? "🤍" : "🧡"
+                 }</button>
+               
                <button onClick={() => this.props.deletePost(this.props.post)} >Unsatisfied? ❌</button>
             
 

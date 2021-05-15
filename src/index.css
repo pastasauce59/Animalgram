@@ -32,7 +32,7 @@ div {
   border-width: 25px;
   border-color: lightcoral;
   max-height:fit-content;
-  max-width:fit-content;
+  max-width:500px;
   margin:auto;
   width: 50%;
   padding: 20px;
@@ -49,13 +49,13 @@ div {
 
 .comments{
   background-color: lightslategray;
-  border-radius: 12px;
+  border-radius: 10px;
   text-align: left;
 }
 
 .comments li {
   border-style: groove;
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: rgba(211, 211, 211, 0.534);
 }
 

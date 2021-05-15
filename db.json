@@ -2,10 +2,10 @@
   "posts": [
     {
       "id": 6,
-      "caption": "example cat post",
+      "caption": "Waving cat",
       "image": "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9",
-      "likes": 0,
-      "favorited": false,
+      "likes": 2,
+      "favorited": null,
       "type": "cat",
       "comments": [
         "cat says hi!",
@@ -13,43 +13,128 @@
       ]
     },
     {
-      "id": 7,
-      "caption": "doggo with glasses",
-      "image": "https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_581/master/969.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a368f449b1cc1f37412c07a1bd901fb5",
-      "likes": 4,
-      "favorited": true,
-      "type": "dog",
-      "comments": [
-        "fav feed comment",
-        "checking if working?",
-        "still working?",
-        "making a comment while in favorite feed"
-      ]
-    },
-    {
       "caption": "what's he looking at??",
       "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
-      "likes": 0,
-      "favorited": false,
+      "likes": 1,
+      "favorited": null,
       "type": "cat",
       "comments": [
-        "Loving learning how to code!"
+        "I think the cat is looking for food..",
+        "I can't tell if he is mad or not"
       ],
       "id": 8
     },
     {
-      "caption": "example post",
-      "image": "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg?w=636&h=424",
-      "likes": 5,
-      "favorited": false,
-      "type": "cat",
+      "caption": "2 cool 4 skool",
+      "image": "https://i.pinimg.com/originals/f3/6d/27/f36d2783ac3099cde493066550b64f8b.jpg",
+      "likes": 8,
+      "favorited": null,
+      "type": "dog",
       "comments": [
-        "this will replace the other comment",
-        "does this work?",
-        "still working?",
-        "working in regular feed"
+        "😎😎😎",
+        "When I grow up I want to be like this dog!"
       ],
       "id": 9
+    },
+    {
+      "caption": "curls on curls",
+      "image": "https://www.pumpkin.care/blog/wp-content/uploads/2020/07/22-Best-Hypoallergenic-Dogs-HERO.jpg",
+      "likes": 3,
+      "favorited": null,
+      "type": "dog",
+      "comments": [
+        "what a cute dog!"
+      ],
+      "id": 10
+    },
+    {
+      "caption": "The way of the cat samurai",
+      "image": "https://i.pinimg.com/originals/ed/08/bf/ed08bf6bff9e2e870d96b976c23829c8.jpg",
+      "likes": 1,
+      "favorited": null,
+      "type": "cat",
+      "comments": [],
+      "id": 11
+    },
+    {
+      "caption": "ROARRR!!!",
+      "image": "https://hips.hearstapps.com/esq.h-cdn.co/assets/15/23/1433261929-25-toughest-animals-lede.jpg",
+      "likes": 1,
+      "favorited": null,
+      "type": "bear",
+      "comments": [
+        "woah!! that is a scary bear!"
+      ],
+      "id": 12
+    },
+    {
+      "caption": "hmmmm?",
+      "image": "https://specials-images.forbesimg.com/imageserve/5faad4255239c9448d6c7bcd/960x0.jpg?fit=scale",
+      "likes": 0,
+      "favorited": null,
+      "type": "monkey",
+      "comments": [],
+      "id": 13
+    },
+    {
+      "caption": "just let me rest!",
+      "image": "https://tr-images.condecdn.net/image/QMVB3wpapPd/crop/1440/f/red-panda-gettyimages-1130384417.jpg",
+      "likes": 1,
+      "favorited": "5/14/2021, 11:46:51 PM",
+      "type": "red panda",
+      "comments": [
+        "he chillin he chillin"
+      ],
+      "id": 15
+    },
+    {
+      "caption": "what's up everybody?",
+      "image": "https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/penguins-429128_1920.jpg?itok=rtlC_a2m",
+      "likes": 0,
+      "favorited": null,
+      "type": "penguin",
+      "comments": [],
+      "id": 16
+    },
+    {
+      "caption": "SUP?",
+      "image": "https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/cow-red.jpg?itok=XrzePhsj",
+      "likes": 0,
+      "favorited": null,
+      "type": "cow",
+      "comments": [],
+      "id": 17
+    },
+    {
+      "caption": "see you later bro",
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/advancelocal/63IGRUTR5VDMFCRZWETENQM2UQ.jpg",
+      "likes": 0,
+      "favorited": "5/14/2021, 11:46:26 PM",
+      "type": "dog",
+      "comments": [],
+      "id": 18
+    },
+    {
+      "caption": "to code or not to code??",
+      "image": "https://d1e00ek4ebabms.cloudfront.net/production/63c693c4-416c-4e26-92fd-883a262c5074.jpg",
+      "likes": 4,
+      "favorited": "5/14/2021, 10:05:35 AM",
+      "type": "cat",
+      "comments": [
+        "that truly is the question!",
+        "I believe the answer is to code!",
+        "this is truly a profound thought"
+      ],
+      "id": 19
+    },
+    {
+      "caption": "rabbit",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Oryctolagus_cuniculus_Rcdo.jpg/1200px-Oryctolagus_cuniculus_Rcdo.jpg",
+      "likes": 0,
+      "favorited": "5/14/2021, 11:46:22 PM",
+      "type": "rabbit",
+      "comments": [],
+      "id": 21
     }
   ]
 }
