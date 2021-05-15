@@ -2,6 +2,10 @@ import React from 'react'
 import Post from '../components/Post'
 
 export default class FavoritedContainer extends React.Component{
+
+    
+
+
     
     render() {
         return(

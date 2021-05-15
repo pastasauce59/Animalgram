@@ -19,6 +19,36 @@ class App extends React.Component {
     // favorited: false
   }
 
+  
+
+  deleteComment = (e, post, key) => {
+    e.preventDefault()
+    // debugger
+      // this.setState({
+      //   comments: [post.comments.splice(key, 1)]
+      //   })
+      // console.log(post.comments)
+      
+      post.comments.splice(key, 1)
+      let reqObj = {}
+      reqObj.headers = {'Content-Type': 'Application/json'}
+      reqObj.method = 'PATCH'
+      reqObj.body = JSON.stringify({
+        comments: post.comments
+    })
+    
+    fetch(`http://localhost:3000/posts/${post.id}/`, reqObj)
+    .then((r) => r.json())
+    .then((updatedCommentObj) => 
+      this.setState({
+      comments: this.state.comments.map(comment =>
+        comment.id )
+      }) 
+    )}
+
+
+
+
 
 
   // sorted the data so newest posts at the top of feed
@@ -39,16 +69,27 @@ class App extends React.Component {
       comments: [...postObj.comments, comment]
     })
 
-    fetch(`http://localhost:3000/posts/${postObj.id}`, reqObj)
+    fetch(`http://localhost:3000/posts/${postObj.id}/`, reqObj)
     .then(resp => resp.json())
-    .then(updatedPostObj => this.setState({
-      posts: this.state.posts.map(post => {
+    .then(updatedPostObj => {
+     let updatedPosts = this.state.posts.map(post => {
         if(post.id === updatedPostObj.id) return updatedPostObj
         else return post
       })
-    }))
+      this.setState({
+      posts: updatedPosts
+    })
+  }
+  )
+  }
+
+
+  recordTime = () => {
+    this.setState({
+      timeClicked:new Date().toLocaleString()
+    })
     
-  
+    // console.log(new Date().toLocaleString())
   }
 
   // --- for reference --- //

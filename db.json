@@ -80,7 +80,7 @@
       "caption": "just let me rest!",
       "image": "https://tr-images.condecdn.net/image/QMVB3wpapPd/crop/1440/f/red-panda-gettyimages-1130384417.jpg",
       "likes": 1,
-      "favorited": "5/14/2021, 11:46:51 PM",
+      "favorited": null,
       "type": "red panda",
       "comments": [
         "he chillin he chillin"
@@ -100,9 +100,11 @@
       "caption": "SUP?",
       "image": "https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/cow-red.jpg?itok=XrzePhsj",
       "likes": 0,
-      "favorited": null,
+      "favorited": "5/14/2021, 11:57:21 PM",
       "type": "cow",
-      "comments": [],
+      "comments": [
+        "blue skies and cow!"
+      ],
       "id": 17
     },
     {
